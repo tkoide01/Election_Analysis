@@ -33,5 +33,23 @@ Below is the screen shot of "election_results.txt" showing the result of analysi
 ## Election-Audit Summary
 Lastly, I would like to propose that the written Pythone code for this project is applicable for any election.
 
+For example, if we want to run the same analysis with different data source, we can modify the script as follow to allow the code pull the data source.
+```
+# Add a variable to load a file from a path.
+file_to_load = os.path.join( "Resources", "election_results_modified.csv")
+# Add a variable to save the file to a path.
+file_to_save = os.path.join("analysis", "election_analysis_modified.txt")
+```
+Also, if we see learn that modified data source in this case has different numbers of columns as shown below, we can modify the below script to accomodate as well.
 
+![](Resources/Election_analysis_terminal_4.png)
+
+```
+  # Get the candidate name from each row.
+  candidate_name = row[3]
+
+  # Extract the county name from each row.
+  county_name = row[2]
+```
+So as long as we ensure that code refers to appropriate columns for items, this Election-Audit code can run the analysis to output the winning candidate, his/her vote count, and the percentage of vote to the total vote count.
 
